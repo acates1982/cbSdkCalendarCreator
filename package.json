@@ -1,0 +1,26 @@
+{
+  "name": "experts-cb-sdk-calendar-creator",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.8.3",
+    "appiphony-lightning-js": "^3.1.0",
+    "base-64": "^0.1.0",
+    "blocksdk": "^1.1.1",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "date-diff": "^0.2.1",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "ics": "^2.13.1",
+    "moment": "^2.24.0",
+    "morgan": "~1.9.0",
+    "request": "^2.88.0",
+    "utf8": "^3.0.0"
+  }
+}

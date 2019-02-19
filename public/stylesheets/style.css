@@ -1,0 +1,75 @@
+.slds-color-picker__summary-label {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  display: block;
+  color: #3e3e3c !important;
+  font-size: 0.75rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  margin-bottom: 0.125rem;
+}
+
+.flatpickr-input {
+  background-color: white !important;
+  border: 1px solid #dddbda !important;
+  border-radius: 0.25rem !important;
+  width: 100% !important;
+  transition: border 0.1s linear, background-color 0.1s linear !important;
+  display: inline-block !important;
+  padding: 0 1rem 0 0.75rem !important;
+  line-height: 1.875rem !important;
+  min-height: calc(1.875rem + (1px * 2)) !important;
+}
+
+.slds-input[readonly] {
+  padding: 0 1rem 0 0.75rem !important;
+    border: 1px solid #dddbda !important;
+    background-color: white !important;
+    font-size: .875rem !important;
+  }
+
+  .flatpickr-input:active {
+    padding: 0 1rem 0 0.75rem !important;
+      border: 1px solid #dddbda !important;
+      background-color: white !important;
+      font-size: .875rem !important;
+    }
+
+  .colorpicker-2x .colorpicker-saturation {
+      width: 200px;
+      height: 200px;
+  }
+
+  .colorpicker-2x .colorpicker-hue,
+  .colorpicker-2x .colorpicker-alpha {
+      width: 30px;
+      height: 200px;
+  }
+
+  .colorpicker-2x .colorpicker-color,
+  .colorpicker-2x .colorpicker-color div {
+      height: 30px;
+  }
+
+
+  input[type="text"]
+  {
+    color: #3e3e3c !important;
+    font-weight: 400 !important;
+    font-size: 0.8125rem !important;
+  }
+
+textarea {
+  color: #3e3e3c !important;
+  font-weight: 400 !important;
+  font-size: 0.8125rem !important;
+}
+
+::placeholder {
+  color: #3e3e3c !important;
+  font-weight: 400 !important;
+  font-size: 0.8125rem!important;
+}
