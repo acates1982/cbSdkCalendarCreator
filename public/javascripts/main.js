@@ -46,6 +46,7 @@ var fieldChecker = function() {
 
 // Start Post ICS data to icscreator route
 function buildContent() {
+  $("#spinner").show();
   $("#creationAlert").hide();
   buttonText = $('#buttonText').val();
   buttonColor = $('#buttonColor').val();
@@ -73,6 +74,7 @@ function buildContent() {
         $('#creationAlert').html(assetName + ' created with id: ' + assetId);
         $("#creationAlert").addClass("slds-text-color_success");
         $("#creationAlert").removeClass("slds-text-color_error");
+          $("#spinner").hide();
         $("#creationAlert").show();
         blockContent();
       } else {
@@ -80,6 +82,7 @@ function buildContent() {
         $('#creationAlert').html('ICS creation error: ' + reason);
         $("#creationAlert").removeClass("slds-text-color_success");
         $("#creationAlert").addClass("slds-text-color_error");
+          $("#spinner").hide();
         $("#creationAlert").show();
       }
     })
@@ -87,6 +90,7 @@ function buildContent() {
       $('#creationAlert').html('ICS creation error: check your configuration');
       $("#creationAlert").removeClass("slds-text-color_success");
       $("#creationAlert").addClass("slds-text-color_error");
+        $("#spinner").hide();
       $("#creationAlert").show();
     })
   // End Ajax
@@ -111,7 +115,7 @@ function blockSettings() {
 
 function blockContent() {
 
-  sdk.setContent('<table align="center"><tr><td style="font-family: Gotham, Helvetica, Arial, sans-serif; padding: 20px 0px;" width="90%"><a alias="Add To Calendar" href="' + assetUrl + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none;" target="_blank"><span style="display: block; color: #ffffff; text-align: center; padding: 10px 0px; border-radius: 20px; background-color: ' + buttonColor + ';">' + buttonText + '</span></a></td></tr></table>');
+  sdk.setContent('<table align="center"><tr><td style="font-family: Gotham, Helvetica, Arial, sans-serif; padding: 20px 0px;" width="90%"><a alias="Add To Calendar" href="' + assetUrl + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none;" target="_blank"><span style="display: block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color: ' + buttonColor + ';">' + buttonText + '</span></a></td></tr></table>');
 
   sdk.setData({
     buttonText: buttonText,
@@ -148,7 +152,7 @@ sdk.getData(function(data) {
 $('#buildContent')
   .click(buildContent)
 
-$('#buttonText, #buttonColor, #eventTitle, #eventStart, #eventEnd')
+$('#buttonText, #buttonColor, #eventTitle, #eventStart, #eventEnd, #eventDescription, #eventLocation')
   .keyup(fieldChecker)
   .keypress(fieldChecker)
   .blur(fieldChecker)
