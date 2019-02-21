@@ -2,16 +2,16 @@ var buttonText = buttonColor = eventTitle = eventStart = eventEnd = eventDescrip
 
 // Start Date Pickers
 $("#eventStart").flatpickr({
-   minDate: "today",
-   enableTime: true,
+  minDate: "today",
+  enableTime: true,
   dateFormat: "Z",
   //  altInput: true,
   //  altFormat: "m/d/Y @ h:i K"
   //  dateFormat: "m/d/Y @ h:i K"
 });
 $("#eventEnd").flatpickr({
-   minDate: "today",
-   enableTime: true,
+  minDate: "today",
+  enableTime: true,
   dateFormat: "Z",
   //  altInput: true,
   //  altFormat: "m/d/Y @ h:i K"
@@ -76,7 +76,7 @@ function buildContent() {
         $('#creationAlert').html(assetName + ' created with id: ' + assetId);
         $("#creationAlert").addClass("slds-text-color_success");
         $("#creationAlert").removeClass("slds-text-color_error");
-          $("#spinner").hide();
+        $("#spinner").hide();
         $("#creationAlert").show();
         blockContent();
       } else {
@@ -84,7 +84,7 @@ function buildContent() {
         $('#creationAlert').html('ICS creation error: ' + reason);
         $("#creationAlert").removeClass("slds-text-color_success");
         $("#creationAlert").addClass("slds-text-color_error");
-          $("#spinner").hide();
+        $("#spinner").hide();
         $("#creationAlert").show();
       }
     })
@@ -92,7 +92,7 @@ function buildContent() {
       $('#creationAlert').html('ICS creation error: check your configuration');
       $("#creationAlert").removeClass("slds-text-color_success");
       $("#creationAlert").addClass("slds-text-color_error");
-        $("#spinner").hide();
+      $("#spinner").hide();
       $("#creationAlert").show();
     })
   // End Ajax
@@ -116,9 +116,9 @@ function blockSettings() {
 }
 
 function blockContent() {
-gcalStart = moment(eventStart).format('YYYY') + moment(eventStart).format('MM') + moment(eventStart).format('DD') + 'T' + moment(eventStart).format('HH') + moment(eventStart).format('mm') + moment(eventStart).format('ss');
-gcalEnd = moment(eventEnd).format('YYYY') + moment(eventEnd).format('MM') + moment(eventEnd).format('DD') + 'T' + moment(eventEnd).format('HH') + moment(eventEnd).format('mm') + moment(eventEnd).format('ss');
-gcalLink = 'http://www.google.com/calendar/event?action=TEMPLATE&dates=' + gcalStart + '%2F' + gcalEnd + '&text=' + encodeURIComponent(eventTitle) + '&location=' + encodeURIComponent(eventLocation) + '&details=' + encodeURIComponent(eventDescription);
+  gcalStart = moment(eventStart).format('YYYY') + moment(eventStart).format('MM') + moment(eventStart).format('DD') + 'T' + moment(eventStart).format('HH') + moment(eventStart).format('mm') + moment(eventStart).format('ss');
+  gcalEnd = moment(eventEnd).format('YYYY') + moment(eventEnd).format('MM') + moment(eventEnd).format('DD') + 'T' + moment(eventEnd).format('HH') + moment(eventEnd).format('mm') + moment(eventEnd).format('ss');
+  gcalLink = 'http://www.google.com/calendar/event?action=TEMPLATE&dates=' + gcalStart + '%2F' + gcalEnd + '&text=' + encodeURIComponent(eventTitle) + '&location=' + encodeURIComponent(eventLocation) + '&details=' + encodeURIComponent(eventDescription);
 
   sdk.setContent('<table align="center"><tr><td style="font-family: Gotham, Helvetica, Arial, sans-serif; padding: 20px 0px;" width="90%"><a alias="Add To Calendar" href="' + assetUrl + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none;" target="_blank" class="gmail-hide"><span style="display: block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color:' + buttonColor + ';">' + buttonText + '</span></a><a alias="Add To Calendar" href="' + gcalLink + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; display:none;" target="_blank" class="gmail-show"><span style="display:block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color:' + buttonColor + ';">' + buttonText + '</span></a></td></tr></table>');
 
@@ -146,7 +146,7 @@ sdk.getData(function(data) {
   assetId = data.assetId || '';
   assetUrl = data.assetUrl || '';
   blockSettings();
-//  blockContent();
+  //  blockContent();
 });
 
 ///////////////////
