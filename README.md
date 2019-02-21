@@ -12,7 +12,7 @@
 ## Overview
 
 * This SDK app provides a way take input from the block, create a calendar (ICS) file, upload that file to Content Builder, and ultimately create a button that the user can add to their calendar.
-* The app actually creates two buttons. One with a link to the ICS file and one with a link to add to a google calendar stacked on top of each other. The google button has a style of display: none so to leverage this to render properly add this bit of code to the template style.
+* The app actually creates two buttons. One with a link to the ICS file and one with a link to add to a google calendar stacked on top of each other. The google button has a style of display: none. To leverage this to render properly add this bit of code to the template style.
 
 ```
 u ~ div .gmail-hide {
@@ -29,8 +29,8 @@ display:block!important;
 * Fill out the environment variables
 	* CLIENTID - Client Secret of API Package (Not Legacy Package)
 	* CLIENTSECRET - Client Secret of API Package (Not Legacy Package)
-	* SUBDOMAIN - Tenant Specific Subdomain. Ex.
-	* SUBDOMAIN - Content Builder Folder ID Where ICS Files Will Reside
+	* SUBDOMAIN - Tenant Specific Subdomain. Ex.mcmtwjynv76zg4b73149z7yzw5mm
+	* ICSFOLDERID - Content Builder Folder ID Where ICS Files Will Reside
 * Create an Installed Package and add a component type of Custom Content Block. Use the Heroku app URL as the Endpoint URL when configuring this component.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
