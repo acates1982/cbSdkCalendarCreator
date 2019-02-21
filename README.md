@@ -7,11 +7,11 @@
 ## Overview
 
 <p align="center">
-  <img src="https://experts-cbsdk-calendarcreator.herokuapp.com/images/cb-sdk-calendar-creator.png" width="150" title="Marketing Cloud Experts">
+  <img src="https://experts-cbsdk-calendarcreator.herokuapp.com/images/cb-sdk-calendar-creator.png" width="100%" title="Marketing Cloud Experts">
 </p>
 
 * This SDK app provides a way take input from the block, create a calendar (ICS) file, upload that file to Content Builder, and ultimately create a button that the user can add to their calendar.
-* The app actually creates two buttons. One with a link to the ICS file and one with a link to add to a google calendar stacked on top of each other. The google button has a style of display: none so to leverage this to render properly add this bit of code to the template style. 
+* The app actually creates two buttons. One with a link to the ICS file and one with a link to add to a google calendar stacked on top of each other. The google button has a style of display: none so to leverage this to render properly add this bit of code to the template style.
 
 ```
 u ~ div .gmail-hide {
