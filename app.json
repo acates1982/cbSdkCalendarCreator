@@ -1,7 +1,7 @@
 {
   "name": "Calendar Creator",
   "description": "Content Builder SDK app for creating ICS files.",
-  "repository": "https://github.com/acates1982/cb-sdk-calendar-creator",
+  "repository": "https://github.com/acates1982/cbSdkCalendarCreator",
   "logo": "https://experts-cbsdk-calendarcreator.herokuapp.com/images/calendar.png",
   "keywords": ["content builder", "sdk", "calendar", "ics"],
   "env": {
