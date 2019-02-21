@@ -1,0 +1,20 @@
+{
+  "name": "Calendar Creator",
+  "description": "Content Builder SDK app for creating ICS files.",
+  "repository": "https://github.com/heroku/button-sample",
+  "logo": "https://experts-cbsdk-calendarcreator.herokuapp.com/images/calendar.png",
+  "keywords": ["content builder", "sdk", "calendar", "ics"],
+  "env": {
+    "CLIENTID": {
+      "description": "Client ID of API Package (Not Legacy Package)"
+    },
+    "CLIENTSECRET": {
+      "description": "Client Secret of API Package (Not Legacy Package)"
+    },
+    "SUBDOMAIN": {
+      "description": "Tenant Specific Subdomain"
+    },
+    "ICSFOLDERID": {
+      "description": "Content Builder Folder ID Where ICS Files Will Reside"
+    }
+}
