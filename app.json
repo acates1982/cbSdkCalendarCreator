@@ -17,4 +17,5 @@
     "ICSFOLDERID": {
       "description": "Content Builder Folder ID Where ICS Files Will Reside"
     }
+  }
 }
