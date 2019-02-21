@@ -34,11 +34,11 @@ display:block!important;
 * Create an Installed Package and add a component type of Custom Content Block. Use the Heroku app URL as the Endpoint URL when configuring this component.
 
 <p align="center">
-  <img src="http://image.s4.exct.net/lib/fe92157473650c7a77/m/1/72051d78-d9f3-438a-9984-4010d12ede86.png" width="100%" title="Marketing Cloud Experts">
+  <img src="https://experts-cbsdk-calendarcreator.herokuapp.com/images/cb-sdk-calendar-creator-config.png" width="100%" title="Marketing Cloud Experts">
 </p>
 
 <p align="center">
-  <img src="http://image.s4.exct.net/lib/fe92157473650c7a77/m/1/e8ab772b-e4e5-4622-aefe-6c5b140fab47.png" width="100%" title="Marketing Cloud Experts">
+  <img src="https://experts-cbsdk-calendarcreator.herokuapp.com/images/cb-sdk-calendar-creator-config2.png" width="100%" title="Marketing Cloud Experts">
 </p>
 
 <a href="https://www.heroku.com/deploy/?template=https://github.com/acates1982/cbSdkCalendarCreator">
