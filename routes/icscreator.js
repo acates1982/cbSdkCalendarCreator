@@ -7,10 +7,10 @@ const utf8 = require('utf8');
 const moment = require('moment');
 const request = require("request");
 
-var ci = process.env.CLIENTID || "giygenu6a4704ba8cwh5h4nj";
-var cs = process.env.CLIENTSECRET || "66mw3jfwQsqzVpvqSiHitP16";
-var sd = process.env.SUBDOMAIN || 'mcmtwjynv76zg4b73149z7yzw5mm';
-var icsFolder = process.env.ICSFOLDERID || '876667';
+var ci = process.env.CLIENTID;
+var cs = process.env.CLIENTSECRET;
+var sd = process.env.SUBDOMAIN;
+var icsFolder = process.env.ICSFOLDERID;
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
