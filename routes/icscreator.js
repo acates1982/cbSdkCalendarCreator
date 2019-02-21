@@ -21,18 +21,19 @@ router.post('/', function(req, res, next) {
   eventDescription = req.body.eventDescription;
   eventLocation = req.body.eventLocation;
   eventStartDate = req.body.eventStartDate;
+  console.log("start Date: " + eventStartDate);
   eventEndDate = req.body.eventEndDate;
 
-  icsStartYear = moment(eventStartDate).format('YYYY');
-  icsStartMonth = moment(eventStartDate).format('M');
-  icsStartDay = moment(eventStartDate).format('D');
-  icsStartHour = moment(eventStartDate).format('H');
-  icsStartMinute = moment(eventStartDate).format('m');
-  icsEndYear = moment(eventEndDate).format('YYYY');
-  icsEndMonth = moment(eventEndDate).format('M');
-  icsEndDay = moment(eventEndDate).format('D');
-  icsEndHour = moment(eventEndDate).format('H');
-  icsEndMinute = moment(eventEndDate).format('m');
+  icsStartYear = eventStartDate.substring(0,4);
+  icsStartMonth = eventStartDate.substring(5,7);
+  icsStartDay = eventStartDate.substring(8,10);
+  icsStartHour = eventStartDate.substring(11,13);
+  icsStartMinute = eventStartDate.substring(14,16);
+  icsEndYear = eventEndDate.substring(0,4);
+  icsEndMonth = eventEndDate.substring(5,7);
+  icsEndDay = eventEndDate.substring(8,10);
+  icsEndHour = eventEndDate.substring(11,13);
+  icsEndMinute = eventEndDate.substring(14,16);
 
   ics.createEvent({
     start: [icsStartYear, icsStartMonth, icsStartDay, icsStartHour, icsStartMinute],
@@ -46,7 +47,6 @@ router.post('/', function(req, res, next) {
     } else {
       var utf8Value = utf8.encode(value);
       encodedValue = base64.encode(utf8Value);
-      console.log(encodedValue);
       getToken();
     }
   })
