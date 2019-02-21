@@ -116,29 +116,11 @@ function blockSettings() {
 }
 
 function blockContent() {
-//20190222T190000Z/20190222T200000Z
 gcalStart = moment(eventStart).format('YYYY') + moment(eventStart).format('MM') + moment(eventStart).format('DD') + 'T' + moment(eventStart).format('HH') + moment(eventStart).format('mm') + moment(eventStart).format('ss');
-console.log(gcalStart);
 gcalEnd = moment(eventEnd).format('YYYY') + moment(eventEnd).format('MM') + moment(eventEnd).format('DD') + 'T' + moment(eventEnd).format('HH') + moment(eventEnd).format('mm') + moment(eventEnd).format('ss');
-console.log(gcalEnd);
 gcalLink = 'http://www.google.com/calendar/event?action=TEMPLATE&dates=' + gcalStart + '%2F' + gcalEnd + '&text=' + encodeURIComponent(eventTitle) + '&location=' + encodeURIComponent(eventLocation) + '&details=' + encodeURIComponent(eventDescription);
-console.log(gcalLink);
-/*
-  <table align="center">
-    <tr>
-      <td style="font-family: Gotham, Helvetica, Arial, sans-serif; padding: 20px 0px;" width="90%">
-        <a alias="Add To Calendar" href="http://image.s4.exct.net/lib/fe92157473650c7a77/m/1/c9246837-99da-49ec-8600-e40c14df6f2c.ics" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none;" target="_blank" class="gmail-hide"><span style="display: block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color:#0070d2;">ICS - Save The Date</span></a>
-        <a alias="Add To Calendar" href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20190220T040000Z%2F20190220T050000Z&text=Healthcare%20Webinar&location=Online&details=some%20details" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; display:none;" target="_blank" class="gmail-show"><span style="display:block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color:#0070d2;">GMAIL - Save The Date</span></a>
-      </td>
-    </tr>
-  </table>
-*/
-// ICS Only
-/*
-  sdk.setContent('<table align="center"><tr><td style="font-family: Gotham, Helvetica, Arial, sans-serif; padding: 20px 0px;" width="90%"><a alias="Add To Calendar" href="' + assetUrl + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none;" target="_blank"><span style="display: block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color: ' + buttonColor + ';">' + buttonText + '</span></a></td></tr></table>');
-*/
 
-  sdk.setContent('<table align="center"><tr><td style="font-family: Gotham, Helvetica, Arial, sans-serif; padding: 20px 0px;" width="90%"><a alias="Add To Calendar" href="' + assetUrl + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none;" target="_blank" class="gmail-hide"><span style="display: block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color:' + buttonColor + ';">' + buttonText + '</span></a><a alias="Add To Calendar" href="' + gcalLink + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; display:none;" target="_blank" class="gmail-show"><span style="display:block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color:' + buttonColor + ';">' + buttonText + 'e</span></a></td></tr></table>');
+  sdk.setContent('<table align="center"><tr><td style="font-family: Gotham, Helvetica, Arial, sans-serif; padding: 20px 0px;" width="90%"><a alias="Add To Calendar" href="' + assetUrl + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none;" target="_blank" class="gmail-hide"><span style="display: block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color:' + buttonColor + ';">' + buttonText + '</span></a><a alias="Add To Calendar" href="' + gcalLink + '" style="font-family: Gotham, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; display:none;" target="_blank" class="gmail-show"><span style="display:block; color: #ffffff; text-align: center; padding: 10px 10px; border-radius: 20px; background-color:' + buttonColor + ';">' + buttonText + '</span></a></td></tr></table>');
 
   sdk.setData({
     buttonText: buttonText,
