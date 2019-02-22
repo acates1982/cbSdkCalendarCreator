@@ -34,6 +34,8 @@ router.post('/', function(req, res, next) {
   eventLocation = req.body.eventLocation;
   eventStartDate = req.body.eventStartDate;
   eventEndDate = req.body.eventEndDate;
+  console.log("event start: " + eventStartDate);
+  console.log("event end: " + eventEndDate);
 
   icsStartYear = eventStartDate.substring(0, 4);
   icsStartMonth = eventStartDate.substring(5, 7);
@@ -45,6 +47,16 @@ router.post('/', function(req, res, next) {
   icsEndDay = eventEndDate.substring(8, 10);
   icsEndHour = eventEndDate.substring(11, 13);
   icsEndMinute = eventEndDate.substring(14, 16);
+  console.log("start year: " + icsStartYear);
+  console.log("start month: " + icsStartMonth);
+  console.log("start day: " + icsStartDay);
+  console.log("start hour: " + icsStartHour);
+  console.log("start min: " + icsStartMinute);
+  console.log("end year: " + icsEndYear);
+  console.log("end month: " + icsEndMonth);
+  console.log("end day: " + icsEndDay);
+  console.log("end hour: " + icsEndHour);
+  console.log("end min: " + icsEndMinute);
 
   ics.createEvent({
     start: [icsStartYear, icsStartMonth, icsStartDay, icsStartHour, icsStartMinute],
