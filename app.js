@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/slds', express.static(__dirname + '/node_modules/@salesforce-ux/design-system/'));
 
 app.use('/', indexRouter);
-app.use('/icscreator', icsRouter);
+app.use('/', icsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
