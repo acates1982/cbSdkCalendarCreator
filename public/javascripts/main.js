@@ -1,5 +1,7 @@
 var buttonText = buttonColor = eventTitle = eventStart = eventEnd = eventDescription = eventLocation = assetId = assetUrl = '';
 
+var application = window.location;
+
 // Start Date Pickers
 $("#eventStart").flatpickr({
   minDate: "today",
@@ -57,7 +59,6 @@ function buildContent() {
   eventEnd = $('#eventEnd').val();
   eventDescription = $('#eventDescription').val();
   eventLocation = $('#eventLocation').val();
-var application = window.location;
   var postData = {
     'eventTitle': eventTitle,
     'eventDescription': eventDescription,
