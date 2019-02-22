@@ -66,7 +66,7 @@ function buildContent() {
     'assetId': assetId
   };
   // Start Ajax
-  $.post('/icscreator/', postData, function(data) {})
+  $.post('/icscreator', postData, function(data) {})
     .done(function(data) {
       if (data.status == 'success') {
         assetName = data.assetName;

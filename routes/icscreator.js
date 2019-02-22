@@ -13,7 +13,8 @@ var sd = process.env.SUBDOMAIN;
 var icsFolder = process.env.ICSFOLDERID;
 
 /* GET home page. */
-router.post('/icscreator', function(req, res, next) {
+router.post('/', function(req, res, next) {
+  console.log("ics creator called...")
   var eventTitle = eventDescription = eventLocation = eventStartDate = eventEndDate = icsStartYear = icsStartMonth = icsStartDay = icsStartHour = icsStartMinute = icsEndYear = icsEndMonth = icsEndDay = icsEndHour = icsEndMinute = encodedValue = assetId = assetName = assetMethod = assetPayload = assetUrl = '';
 
   assetId = req.body.assetId;
