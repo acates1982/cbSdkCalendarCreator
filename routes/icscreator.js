@@ -12,6 +12,7 @@ var cs = process.env.CLIENTSECRET;
 var sd = process.env.SUBDOMAIN;
 var icsFolder = process.env.ICSFOLDERID;
 
+console.log(sd);
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
@@ -67,7 +68,8 @@ router.post('/', function(req, res, next) {
       },
       json: true
     };
-
+ console.log(JSON.stringify(tokenOptions));
+ 
     function parseResponse(error, response, body) {
       if (!error && response.statusCode == 200) {
         token = response.body.access_token;
@@ -83,6 +85,7 @@ router.post('/', function(req, res, next) {
 
   function createUpdateCalendar(t) {
     token = t;
+    console.log("token: " + token);
     if (assetId.length == 0) {
       assetUrl = 'https://' + sd + '.rest.marketingcloudapis.com/asset/v1/content/assets';
       assetMethod = 'POST';
@@ -116,10 +119,12 @@ router.post('/', function(req, res, next) {
         });
       } else {
         console.log('asset creation error...');
+        console.log(JSON.stringify(response.body));
         console.log(error);
         res.send({
           'status': 'error',
-          'reason': response.body.message
+          'message': response.body.message,
+          'reason': response.body.validationErrors[0].message
         });
       }
     });
