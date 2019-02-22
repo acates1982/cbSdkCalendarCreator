@@ -57,7 +57,7 @@ function buildContent() {
   eventEnd = $('#eventEnd').val();
   eventDescription = $('#eventDescription').val();
   eventLocation = $('#eventLocation').val();
-
+var application = window.location;
   var postData = {
     'eventTitle': eventTitle,
     'eventDescription': eventDescription,
@@ -67,7 +67,7 @@ function buildContent() {
     'assetId': assetId
   };
   // Start Ajax
-  $.post('/icscreator/', postData, function(data) {})
+  $.post(application + '/icscreator/', postData, function(data) {})
     .done(function(data) {
       if (data.status == 'success') {
         assetName = data.assetName;

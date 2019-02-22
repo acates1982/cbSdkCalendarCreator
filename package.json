@@ -1,10 +1,9 @@
 {
   "name": "experts-cb-sdk-calendar-creator",
   "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+  "main": "index.js",
+  "description": "Content Builder SDK App for building calendar files",
+  "author": "Aaron Cates",
   "dependencies": {
     "@salesforce-ux/design-system": "^2.8.3",
     "appiphony-lightning-js": "^3.1.0",
