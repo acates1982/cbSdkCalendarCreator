@@ -12,17 +12,7 @@ var cs = process.env.CLIENTSECRET;
 var sd = process.env.SUBDOMAIN;
 var icsFolder = process.env.ICSFOLDERID;
 
-console.log(ci);
-console.log(cs);
-console.log(sd);
-console.log(icsFolder);
 
-/*
-var ci = 'm79e9qfq0lfkclgebcf4qo81';
-var cs = 'xTdRNlXJOL1SwzHctAUwRsBX';
-var sd = 'mcm8zxc2qn3b1jytd-92rtgj1s44';
-var icsFolder = '882808';
-*/
 /* GET home page. */
 router.post('/', function(req, res, next) {
   console.log("ics creator called...")
@@ -34,35 +24,21 @@ router.post('/', function(req, res, next) {
   eventLocation = req.body.eventLocation;
   eventStartDate = req.body.eventStartDate;
   eventEndDate = req.body.eventEndDate;
-  console.log("event start: " + eventStartDate);
-  console.log("event end: " + eventEndDate);
 
-  icsStartYear = eventStartDate.substring(0, 4);
-  icsStartMonth = eventStartDate.substring(5, 7);
-  icsStartDay = eventStartDate.substring(8, 10);
-  icsStartHour = eventStartDate.substring(11, 13);
-  icsStartMinute = eventStartDate.substring(14, 16);
-  icsEndYear = eventEndDate.substring(0, 4);
-  icsEndMonth = eventEndDate.substring(5, 7);
-  icsEndDay = eventEndDate.substring(8, 10);
-  icsEndHour = eventEndDate.substring(11, 13);
-  icsEndMinute = eventEndDate.substring(14, 16);
-  console.log("start year: " + icsStartYear);
-  console.log("start month: " + icsStartMonth);
-  console.log("start day: " + icsStartDay);
-  console.log("start hour: " + icsStartHour);
-  console.log("start min: " + icsStartMinute);
-  console.log("end year: " + icsEndYear);
-  console.log("end month: " + icsEndMonth);
-  console.log("end day: " + icsEndDay);
-  console.log("end hour: " + icsEndHour);
-  console.log("end min: " + icsEndMinute);
+  icsStartYear = Number(eventStartDate.substring(0, 4));
+  icsStartMonth = Number(eventStartDate.substring(5, 7));
+  icsStartDay = Number(eventStartDate.substring(8, 10));
+  icsStartHour = Number(eventStartDate.substring(11, 13));
+  icsStartMinute = Number(eventStartDate.substring(14, 16));
+  icsEndYear = Number(eventEndDate.substring(0, 4));
+  icsEndMonth = Number(eventEndDate.substring(5, 7));
+  icsEndDay = Number(eventEndDate.substring(8, 10));
+  icsEndHour = Number(eventEndDate.substring(11, 13));
+  icsEndMinute = Number(eventEndDate.substring(14, 16));
 
   ics.createEvent({
-//    start: [icsStartYear, icsStartMonth, icsStartDay, icsStartHour, icsStartMinute],
-//    end: [icsEndYear, icsEndMonth, icsEndDay, icsEndHour, icsEndMinute],
-    start: [2019, 2, 22, 18, 30],
-    end: [2019, 2, 22, 19, 30],
+    start: [icsStartYear, icsStartMonth, icsStartDay, icsStartHour, icsStartMinute],
+    end: [icsEndYear, icsEndMonth, icsEndDay, icsEndHour, icsEndMinute],
     title: eventTitle,
     description: eventDescription,
     location: eventLocation
@@ -70,6 +46,7 @@ router.post('/', function(req, res, next) {
     if (error) {
       console.log(error)
     } else {
+      console.log(value);
       var utf8Value = utf8.encode(value);
       encodedValue = base64.encode(utf8Value);
       getToken();
@@ -94,6 +71,7 @@ router.post('/', function(req, res, next) {
     function parseResponse(error, response, body) {
       if (!error && response.statusCode == 200) {
         token = response.body.access_token;
+        console.log("token: " + token);
         createUpdateCalendar(token);
       } else {
         console.log('token request error...')
@@ -124,6 +102,7 @@ router.post('/', function(req, res, next) {
       body: JSON.parse(assetPayload),
       json: true
     };
+
     request(assetOptions, function(error, response, body) {
       if (!error && response.statusCode == 201 || response.statusCode == 200) {
         assetId = response.body.id;
