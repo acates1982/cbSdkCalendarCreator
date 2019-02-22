@@ -1,5 +1,8 @@
 var buttonText = buttonColor = eventTitle = eventStart = eventEnd = eventDescription = eventLocation = assetId = assetUrl = '';
 
+var applicationURL = process.env.HEROKU_APP_NAME;
+console.log(applicationURL);
+
 // Start Date Pickers
 $("#eventStart").flatpickr({
   minDate: "today",
