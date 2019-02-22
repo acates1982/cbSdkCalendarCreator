@@ -6,17 +6,23 @@ const base64 = require('base-64');
 const utf8 = require('utf8');
 const moment = require('moment');
 const request = require("request");
+
+var ci = process.env.CLIENTID;
+var cs = process.env.CLIENTSECRET;
+var sd = process.env.SUBDOMAIN;
+var icsFolder = process.env.ICSFOLDERID;
+
+console.log(ci);
+console.log(cs);
+console.log(sd);
+console.log(icsFolder);
+
 /*
-var ci = process.env.CLIENTID || 'm79e9qfq0lfkclgebcf4qo81';
-var cs = process.env.CLIENTSECRET || 'xTdRNlXJOL1SwzHctAUwRsBX';
-var sd = process.env.SUBDOMAIN || 'mcm8zxc2qn3b1jytd-92rtgj1s44';
-var icsFolder = process.env.ICSFOLDERID || '882808';
-*/
 var ci = 'm79e9qfq0lfkclgebcf4qo81';
 var cs = 'xTdRNlXJOL1SwzHctAUwRsBX';
 var sd = 'mcm8zxc2qn3b1jytd-92rtgj1s44';
 var icsFolder = '882808';
-
+*/
 /* GET home page. */
 router.post('/', function(req, res, next) {
   console.log("ics creator called...")
