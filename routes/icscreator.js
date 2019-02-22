@@ -145,9 +145,6 @@ router.post('/', function(req, res, next) {
       }
     });
   }
-  res.send({
-    'status': 'success'
-  });
 });
 
 module.exports = router;
