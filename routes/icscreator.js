@@ -57,10 +57,12 @@ router.post('/', function(req, res, next) {
   console.log("end day: " + icsEndDay);
   console.log("end hour: " + icsEndHour);
   console.log("end min: " + icsEndMinute);
-/*
+
   ics.createEvent({
-    start: [icsStartYear, icsStartMonth, icsStartDay, icsStartHour, icsStartMinute],
-    end: [icsEndYear, icsEndMonth, icsEndDay, icsEndHour, icsEndMinute],
+//    start: [icsStartYear, icsStartMonth, icsStartDay, icsStartHour, icsStartMinute],
+//    end: [icsEndYear, icsEndMonth, icsEndDay, icsEndHour, icsEndMinute],
+    start: [2019, 2, 22, 18, 30],
+    end: [2019, 2, 22, 19, 30],
     title: eventTitle,
     description: eventDescription,
     location: eventLocation
@@ -73,7 +75,7 @@ router.post('/', function(req, res, next) {
       getToken();
     }
   })
-*/
+
   function getToken() {
     var tokenOptions = {
       method: 'POST',
