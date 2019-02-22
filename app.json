@@ -14,6 +14,9 @@
     "SUBDOMAIN": {
       "description": "Tenant Specific Subdomain"
     },
+    "MID": {
+      "description": "MID of Business Unit you are deploying the block in"
+    },
     "ICSFOLDERID": {
       "description": "Content Builder Folder ID Where ICS Files Will Reside"
     }

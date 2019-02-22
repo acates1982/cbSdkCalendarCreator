@@ -31,6 +31,7 @@ display:block!important;
 	* CLIENTSECRET - Client Secret of API Package (Not Legacy Package)
 	* SUBDOMAIN - Tenant Specific Subdomain. Ex.mcmtwjynv76zg4b73149z7yzw5mm
 	* ICSFOLDERID - Content Builder Folder ID Where ICS Files Will Reside
+  * MID - MID of Business Unit you are deploying the block in
 * Create an Installed Package and add a component type of Custom Content Block. Use the Heroku app URL as the Endpoint URL when configuring this component.
 
 <a href="https://www.heroku.com/deploy/?template=https://github.com/acates1982/cbSdkCalendarCreator">

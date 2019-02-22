@@ -15,7 +15,6 @@ var mid = process.env.MID;
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
-  console.log("ics creator called...")
   var eventTitle = eventDescription = eventLocation = eventStartDate = eventEndDate = icsStartYear = icsStartMonth = icsStartDay = icsStartHour = icsStartMinute = icsEndYear = icsEndMonth = icsEndDay = icsEndHour = icsEndMinute = encodedValue = assetId = assetName = assetMethod = assetPayload = assetUrl = '';
 
   assetId = req.body.assetId;
@@ -46,7 +45,6 @@ router.post('/', function(req, res, next) {
     if (error) {
       console.log(error)
     } else {
-      console.log(value);
       var utf8Value = utf8.encode(value);
       encodedValue = base64.encode(utf8Value);
       getToken();
@@ -68,7 +66,6 @@ router.post('/', function(req, res, next) {
       },
       json: true
     };
- console.log(JSON.stringify(tokenOptions));
 
     function parseResponse(error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -84,7 +81,6 @@ router.post('/', function(req, res, next) {
 
   function createUpdateCalendar(t) {
     token = t;
-    console.log("token: " + token);
     if (assetId.length == 0) {
       assetUrl = 'https://' + sd + '.rest.marketingcloudapis.com/asset/v1/content/assets';
       assetMethod = 'POST';
