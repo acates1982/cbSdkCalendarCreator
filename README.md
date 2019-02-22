@@ -33,14 +33,6 @@ display:block!important;
 	* ICSFOLDERID - Content Builder Folder ID Where ICS Files Will Reside
 * Create an Installed Package and add a component type of Custom Content Block. Use the Heroku app URL as the Endpoint URL when configuring this component.
 
-<p align="center">
-  <img src="https://experts-cbsdk-calendarcreator.herokuapp.com/images/cb-sdk-calendar-creator-config.png" width="100%" title="Marketing Cloud Experts">
-</p>
-
-<p align="center">
-  <img src="https://experts-cbsdk-calendarcreator.herokuapp.com/images/cb-sdk-calendar-creator-config2.png" width="100%" title="Marketing Cloud Experts">
-</p>
-
 <a href="https://www.heroku.com/deploy/?template=https://github.com/acates1982/cbSdkCalendarCreator">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
