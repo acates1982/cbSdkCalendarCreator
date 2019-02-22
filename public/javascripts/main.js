@@ -1,7 +1,5 @@
 var buttonText = buttonColor = eventTitle = eventStart = eventEnd = eventDescription = eventLocation = assetId = assetUrl = '';
 
-var application = window.location;
-
 // Start Date Pickers
 $("#eventStart").flatpickr({
   minDate: "today",
@@ -68,7 +66,7 @@ function buildContent() {
     'assetId': assetId
   };
   // Start Ajax
-  $.post(application + '/icscreator/', postData, function(data) {})
+  $.post('/icscreator/', postData, function(data) {})
     .done(function(data) {
       if (data.status == 'success') {
         assetName = data.assetName;
