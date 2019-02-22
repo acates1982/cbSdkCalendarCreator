@@ -11,8 +11,7 @@ var ci = process.env.CLIENTID;
 var cs = process.env.CLIENTSECRET;
 var sd = process.env.SUBDOMAIN;
 var icsFolder = process.env.ICSFOLDERID;
-
-console.log(sd);
+var mid = process.env.MID;
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
@@ -64,16 +63,16 @@ router.post('/', function(req, res, next) {
       body: {
         grant_type: 'client_credentials',
         client_id: ci,
-        client_secret: cs
+        client_secret: cs,
+        account_id: mid
       },
       json: true
     };
  console.log(JSON.stringify(tokenOptions));
- 
+
     function parseResponse(error, response, body) {
       if (!error && response.statusCode == 200) {
         token = response.body.access_token;
-        console.log("token: " + token);
         createUpdateCalendar(token);
       } else {
         console.log('token request error...')
@@ -119,7 +118,6 @@ router.post('/', function(req, res, next) {
         });
       } else {
         console.log('asset creation error...');
-        console.log(JSON.stringify(response.body));
         console.log(error);
         res.send({
           'status': 'error',
