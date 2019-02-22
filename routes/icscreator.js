@@ -57,7 +57,7 @@ router.post('/', function(req, res, next) {
   console.log("end day: " + icsEndDay);
   console.log("end hour: " + icsEndHour);
   console.log("end min: " + icsEndMinute);
-
+/*
   ics.createEvent({
     start: [icsStartYear, icsStartMonth, icsStartDay, icsStartHour, icsStartMinute],
     end: [icsEndYear, icsEndMonth, icsEndDay, icsEndHour, icsEndMinute],
@@ -73,7 +73,7 @@ router.post('/', function(req, res, next) {
       getToken();
     }
   })
-
+*/
   function getToken() {
     var tokenOptions = {
       method: 'POST',
@@ -143,6 +143,9 @@ router.post('/', function(req, res, next) {
       }
     });
   }
+  res.send({
+    'status': 'success'
+  });
 });
 
 module.exports = router;
